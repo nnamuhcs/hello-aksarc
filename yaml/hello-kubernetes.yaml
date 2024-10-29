@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
       - name: hello-kubernetes
-        image: nnamuhcs/hello-aksarc
+        image: nnamuhcs/aksarcdemo
         ports:
         - containerPort: 8080
