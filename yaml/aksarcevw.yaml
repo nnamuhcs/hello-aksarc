@@ -1,1 +1,31 @@
-aksarcevw
+apiVersion: v1
+kind: Service
+metadata:
+  name: aksarcdemo
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: aksarcdemo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aksarcdemo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: aksarcdemo
+  template:
+    metadata:
+      labels:
+        app: aksarcdemo
+    spec:
+      containers:
+      - name: aksarcdemo
+        image: nnamuhcs/aksarcevw:latest
+        ports:
+        - containerPort: 8080
