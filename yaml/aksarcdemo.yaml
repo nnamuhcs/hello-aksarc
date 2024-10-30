@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
       - name: aksarcdemo
-        image: nnamuhcs/newaksarcdemo:latest
+        image: nnamuhcs/finalaksarcdemo:latest
         ports:
         - containerPort: 8080
